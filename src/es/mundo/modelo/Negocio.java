@@ -6,7 +6,7 @@ import es.mundo.modelo.Pais;
 import es.mundo.integracion.PaisDAO;
 
 public class Negocio {
-      private PaisDAO paisdao = new PaisDAO();
+      private PaisDAO paisdao = PaisDAO.getInstance();
     
       public int darAlta(String nombre, int habitantes) {
        // validar el pais...

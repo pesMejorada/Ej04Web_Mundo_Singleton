@@ -13,7 +13,16 @@ import es.mundo.modelo.Pais;
 
 public class PaisDAO {
      private Connection cx;
-   
+     private static PaisDAO paisDao=null;
+     
+     private PaisDAO() {
+         
+     }
+     public static PaisDAO getInstance() {
+         if(PaisDAO.paisDao==null)
+             PaisDAO.paisDao = new PaisDAO();
+           return PaisDAO.paisDao; 
+     }
      private void conectar() {
        try {
             Class.forName("com.mysql.jdbc.Driver");
